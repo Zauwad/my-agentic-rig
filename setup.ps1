@@ -1,8 +1,8 @@
 <#
 .SYNOPSIS
-    Antigravity / Gemini CLI Configuration Replicator for Windows
+    GRAVITY // RIG - Autonomous Agent Environment Replicator for Windows
 .DESCRIPTION
-    Restores and synchronizes global skills, MCP servers, hooks, and agent settings.
+    Bootstraps and synchronizes global skills, MCP servers, hooks, and agent configurations.
 #>
 
 [CmdletBinding()]
@@ -13,7 +13,22 @@ param(
 
 $ErrorActionPreference = "Stop"
 
-Write-Host "`n=== Setting up Antigravity Environment ===" -ForegroundColor Cyan
+Write-Host @"
+
+  ▄████  ██▀███   ▄▄▄    ██▒   █▓ ██▓ ▄▄▄█████▓▓██   ██▓
+ ██▒ ▀█▒▓██ ▒ ██▒▒████▄ ▓██░   █▒▓██▒ ▓  ██▒ ▓▒ ▒██  ██▒
+▒██░ ▄▄▄░▓██ ░▄█ ▒▒██  ▀█▄ ▓██  █▒░▒██▒ ▒ ▓██░ ▒░  ▒██ ██░
+░▓█  ██▓ ▒██▀▀█▄  ░██▄▄▄▄██  ▒██ █░░░██░ ░ ▓██▓ ░   ░ ▐██▓░
+░▒▓███▀▒ ░██▓ ▒██▒ ▓█   ▓██▒  ▒▀█░  ░██░   ▒██▒ ░   ░ ██▒▓░
+ ░▒   ▒  ░ ▒▓ ░▒▓░ ▒▒   ▓▒█░  ░ ▐░  ░▓     ▒ ░░      ██▒▒▒ 
+  ░   ░    ░▒ ░ ▒░  ▒   ▒▒ ░  ░ ░░   ▒ ░     ░     ▓██ ░▒░ 
+░ ░   ░    ░░   ░   ░   ▒       ░░   ▒ ░   ░       ▒ ▒ ░░  
+      ░     ░           ░  ░     ░   ░             ░ ░     
+                                ░                  ░ ░     
+  [ THE AUTONOMOUS AGENT ENGINEERING RIG ]
+"@ -ForegroundColor Cyan
+
+Write-Host "`n>>> Initiating RIG bootstrap sequence..." -ForegroundColor Gray
 
 $geminiConfigDir = Join-Path $HOME ".gemini\config"
 $geminiSkillsDir = Join-Path $geminiConfigDir "skills"

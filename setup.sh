@@ -1,8 +1,19 @@
 #!/usr/bin/env bash
-# Antigravity / Gemini CLI Configuration Replicator for macOS / Linux / WSL
+# GRAVITY // RIG - Autonomous Agent Environment Replicator for macOS / Linux / WSL
 set -e
 
-echo -e "\n=== Setting up Antigravity Environment ==="
+echo -e "\033[36m"
+cat << "EOF"
+  ▄████  ██▀███   ▄▄▄    ██▒   █▓ ██▓ ▄▄▄█████▓▓██   ██▓
+ ██▒ ▀█▒▓██ ▒ ██▒▒████▄ ▓██░   █▒▓██▒ ▓  ██▒ ▓▒ ▒██  ██▒
+▒██░ ▄▄▄░▓██ ░▄█ ▒▒██  ▀█▄ ▓██  █▒░▒██▒ ▒ ▓██░ ▒░  ▒██ ██░
+░▓█  ██▓ ▒██▀▀█▄  ░██▄▄▄▄██  ▒██ █░░░██░ ░ ▓██▓ ░   ░ ▐██▓░
+░▒▓███▀▒ ░██▓ ▒██▒ ▓█   ▓██▒  ▒▀█░  ░██░   ▒██▒ ░   ░ ██▒▓░
+  [ THE AUTONOMOUS AGENT ENGINEERING RIG ]
+EOF
+echo -e "\033[0m"
+
+echo -e ">>> Initiating RIG bootstrap sequence..."
 
 GEMINI_CONFIG_DIR="$HOME/.gemini/config"
 GEMINI_SKILLS_DIR="$GEMINI_CONFIG_DIR/skills"
