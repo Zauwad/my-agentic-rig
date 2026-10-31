@@ -1,47 +1,63 @@
 #!/usr/bin/env bash
-# ai-den: One-command setup for my Antigravity / Gemini CLI environment.
+# my-agentic-rig - Personal AI Agent Dotfiles & Environment Setup for macOS / Linux / WSL
 set -e
 
-echo -e "\n[ai-den] setting up environment..."
+CONFIG_DIR="${1:-$HOME/.gemini/config}"
+AGENTS_DIR="${2:-$HOME/.agents}"
+SKILLS_DIR="$CONFIG_DIR/skills"
+HOOKS_DIR="$CONFIG_DIR/hooks"
 
-GEMINI_CONFIG_DIR="$HOME/.gemini/config"
-GEMINI_SKILLS_DIR="$GEMINI_CONFIG_DIR/skills"
-GEMINI_HOOKS_DIR="$GEMINI_CONFIG_DIR/hooks"
-AGENTS_DIR="$HOME/.agents"
+echo -e "\033[36m"
+cat << "EOF"
+  ███    ███  ██    ██      █████   ██████  ███████ ███    ██ ████████ ██  ██████      ██████  ██  ██████  
+  ████  ████   ██  ██      ██   ██ ██       ██      ████   ██    ██    ██ ██           ██   ██ ██ ██       
+  ██ ████ ██    ████       ███████ ██   ███ █████   ██ ██  ██    ██    ██ ██           ██████  ██ ██   ███ 
+  ██  ██  ██     ██        ██   ██ ██    ██ ██      ██  ██ ██    ██    ██ ██           ██   ██ ██ ██    ██ 
+  ██      ██     ██        ██   ██  ██████  ███████ ██   ████    ██    ██  ██████      ██   ██ ██  ██████  
+                 [ PERSONAL AGENTIC DOTFILES // SKILLS // MCPS // RUNTIMES ]
+EOF
+echo -e "\033[0m"
 
-mkdir -p "$GEMINI_CONFIG_DIR" "$GEMINI_SKILLS_DIR" "$GEMINI_HOOKS_DIR" "$AGENTS_DIR"
+echo ">>> Linking personal skills, MCP tools, and runtime protocols..."
+
+mkdir -p "$CONFIG_DIR" "$SKILLS_DIR" "$HOOKS_DIR" "$AGENTS_DIR"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# 1. Sync Skills
-echo "-> syncing skills to $GEMINI_SKILLS_DIR..."
+# 1. Install Skills
+echo -e "\n[1/4] Installing Skills..."
 if [ -d "$SCRIPT_DIR/skills" ]; then
-  cp -r "$SCRIPT_DIR/skills/"* "$GEMINI_SKILLS_DIR/"
+  cp -r "$SCRIPT_DIR/skills/"* "$SKILLS_DIR/"
+  echo "  -> Skills linked into $SKILLS_DIR"
 fi
 
-# 2. Sync Config & MCP
-echo "-> syncing settings & MCP configs..."
+# 2. Sync MCP & Config
+echo -e "\n[2/4] Restoring Settings & MCP Servers..."
 if [ -f "$SCRIPT_DIR/config/config.json" ]; then
-  cp "$SCRIPT_DIR/config/config.json" "$GEMINI_CONFIG_DIR/config.json"
+  cp "$SCRIPT_DIR/config/config.json" "$CONFIG_DIR/config.json"
+  echo "  -> Settings restored"
 fi
 
 if [ -f "$SCRIPT_DIR/config/mcp_config.template.json" ]; then
-  cp "$SCRIPT_DIR/config/mcp_config.template.json" "$GEMINI_CONFIG_DIR/mcp_config.json"
+  cp "$SCRIPT_DIR/config/mcp_config.template.json" "$CONFIG_DIR/mcp_config.json"
+  echo "  -> MCP servers active (context7, gsap, shadcn)"
 fi
 
-# 3. Sync Hooks
-echo "-> syncing hooks..."
+# 3. Restore Hooks
+echo -e "\n[3/4] Installing Hooks..."
 if [ -f "$SCRIPT_DIR/config/hooks.json" ]; then
-  cp "$SCRIPT_DIR/config/hooks.json" "$GEMINI_CONFIG_DIR/hooks.json"
+  cp "$SCRIPT_DIR/config/hooks.json" "$CONFIG_DIR/hooks.json"
 fi
 if [ -d "$SCRIPT_DIR/config/hooks" ]; then
-  cp -r "$SCRIPT_DIR/config/hooks/"* "$GEMINI_HOOKS_DIR/"
+  cp -r "$SCRIPT_DIR/config/hooks/"* "$HOOKS_DIR/"
+  echo "  -> hooks linked"
 fi
 
-# 4. Sync Agent Skill-Lock
-echo "-> syncing agent lockfile..."
+# 4. Restore Skill Lock
+echo -e "\n[4/4] Restoring Agent Registry..."
 if [ -f "$SCRIPT_DIR/agents/.skill-lock.json" ]; then
   cp "$SCRIPT_DIR/agents/.skill-lock.json" "$AGENTS_DIR/.skill-lock.json"
+  echo "  -> .skill-lock.json restored to $AGENTS_DIR"
 fi
 
-echo -e "[ai-den] ready. restart antigravity to load changes.\n"
+echo -e "\nRig ready. Your agent runtime is loaded and synchronized.\n"
