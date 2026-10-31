@@ -1,47 +1,48 @@
 # my-agentic-rig
 
-> This is my daily agent setup. It contains the mental models, skills, and tools I use across my projects. Take what works for you.
+> This is my daily agent setup. It contains the mental models, skills, plugins, and tools I use across my projects. Take what works for you.
 
-Think of this like a personal `.dotfiles` repository, but designed for AI agents. Whether I am working in terminal agent loops, Claude Code, Antigravity, Cursor, or custom CLI runners, I don't want agents starting from zero, guessing framework APIs, or hallucinating brittle template code. 
+Think of this like a personal dotfiles repository, but designed for AI agents. Whether working in terminal agent loops, Claude Code, Antigravity, Cursor, or custom CLI runners, I do not want agents starting from zero, guessing framework APIs, or generating brittle boilerplate.
 
-This repository packages my cognitive skill packs, Model Context Protocol (MCP) servers, lifecycle hooks, and reasoning rules into a single portable environment that I can replicate anywhere in seconds.
+This repository packages my cognitive skill packs, plugins, Model Context Protocol (MCP) servers, and configuration into a single portable environment that can be replicated anywhere in seconds.
 
 ---
 
-## Architecture at a Glance
+## Architecture
 
-How the pieces fit together when an agent boots up in my workspace:
+How the components connect when an agent initializes in a workspace:
 
 ```text
-┌────────────────────────────────────────────────────────────────────────┐
-│                          MY AGENTIC RIG                                │
-├────────────────────────────────────────────────────────────────────────┤
-│                                                                        │
-│   YOU / ME (Human Intent & Architecture Decisions)                     │
-│      │                                                                 │
-│      ▼                                                                 │
-│   AGENT RUNTIME (Claude Code / Antigravity / Cursor / Custom CLI)      │
-│      ├── MCP Toolchain (Live Context, Not Training Memory)             │
-│      │   ├── @upstash/context7-mcp   ──► Live Framework Docs & APIs    │
-│      │   ├── @vinhnguyen/gsap-mcp    ──► 60fps Motion & Timelines      │
-│      │   └── shadcn-ui MCP           ──► Accessible UI Scaffolding     │
-│      │                                                                 │
-│      ├── Progressive Skill Packs (Loaded On-Demand)                    │
-│      │   ├── Spatial & Creative Motion                                 │
-│      │   ├── Token Compression & Anti-Bloat (Caveman / Ponytail)       │
-│      │   └── Reasoning, Introspection & Architecture Review            │
-│      │                                                                 │
-│      └── Pre-Invocation Hooks & Lockfiles                              │
-│          └── Herdr session sync & .skill-lock.json                     │
-│                                                                        │
-└────────────────────────────────────────────────────────────────────────┘
++------------------------------------------------------------------------+
+|                          MY AGENTIC RIG                                |
++------------------------------------------------------------------------+
+|                                                                        |
+|   HUMAN INTENT & ARCHITECTURAL DECISIONS                               |
+|      |                                                                 |
+|      v                                                                 |
+|   AGENT RUNTIME (Claude Code / Antigravity / Cursor / Custom CLI)      |
+|      |                                                                 |
+|      +-- MCP Toolchain (Live Context, Not Stale Training Memory)       |
+|      |   +-- @upstash/context7-mcp   --> Live Documentation & APIs     |
+|      |   +-- @vinhnguyen/gsap-mcp    --> 60fps Motion & Timelines      |
+|      |   +-- shadcn-ui MCP           --> UI Primitives & Scaffolding   |
+|      |                                                                 |
+|      +-- Standalone Global Skills (Loaded On-Demand)                   |
+|      |   +-- Frontend & Visual Systems                                 |
+|      |   +-- Token Optimization & Compression                          |
+|      |   +-- Planning, Introspection & Reasoning                       |
+|      |                                                                 |
+|      +-- Bundled Plugins & Extended Capabilities                       |
+|          +-- Chrome DevTools, Superpowers, ECC Standards, Shadcn UI    |
+|                                                                        |
++------------------------------------------------------------------------+
 ```
 
 ---
 
-## ⚡ Quickstart
+## Quickstart
 
-Replicate my setup onto any new machine:
+Replicate this setup onto any new machine:
 
 ### Windows (PowerShell)
 ```powershell
@@ -49,7 +50,7 @@ git clone git@github.com:Zauwad/my-agentic-rig.git
 Set-Location my-agentic-rig
 .\setup.ps1
 ```
-*Tip: To use the portable MCP template without machine-specific PATH variables, run with `-UsePortableMcp`.*
+*Note: To use the portable MCP template without machine-specific PATH variables, add `-UsePortableMcp`.*
 
 ### macOS / Linux / WSL (Bash)
 ```bash
@@ -61,72 +62,153 @@ chmod +x setup.sh
 
 ---
 
-## 🧠 What’s in My Rig
+## Repository Structure
 
-I organize my agent skills into three distinct categories based on what I need them to do:
-
-### 1. Spatial Motion & Creative Frontend
-I don't like AI generating generic template websites or stiff UI. These skills give agents the spatial mental models, physics formulas, and compositing rules to build award-winning interfaces.
-
-| Skill | How I Use It |
-| :--- | :--- |
-| **`creative-web-animations`** | **My Flagship Reference**: Contains the math (LERP damping, spring physics, scroll remapping, camera splines) and architectural blueprints for 12 modern website paradigms (3D scrollytelling, bento grids, editorial magazines, desktop OS simulators, continuous narrative strips) without binding to rigid code snippets. |
-| **`design-taste-frontend`** | Distilled from 247 curated gallery sites (One Page Love, Awwwards SOTD). Enforces a strict anti-slop visual standard, typographic hierarchy, and real-browser inspection. |
-| **`frontend-design`** | High-leverage guidelines for distinctive, production-grade visual design and aesthetic direction. |
-| **`improve-animations`** | Senior motion advisor workflow based on Emil Kowalski's craftsmanship rules. Surveys code and creates actionable motion plans. |
-| **`improve-ui`** | Focuses on tactical UI micro-polish: spacing rhythm, sub-pixel borders, shadows, hit targets, and interaction feedback. |
-
-### 2. Token Compression & Anti-Bloat
-Long sessions waste tokens on verbose pleasantries, and AI models love inventing unnecessary abstractions. I use these to keep sessions lean and fast.
-
-| Skill | How I Use It |
-| :--- | :--- |
-| **`caveman`** | Ultra-dense communication mode. Cuts token usage ~75% while keeping full technical accuracy. |
-| **`caveman-commit`** | Generates ultra-compressed Conventional Commits (subject $\le 50$ chars). |
-| **`caveman-compress`** | In-place compression for runbooks and memory files to preserve context window. |
-| **`caveman-review`** | PR feedback stripped down to one line per finding: `location`, `problem`, `fix`. |
-| **`caveman-stats`** | Telemetry tracker for token consumption and real dollar savings. |
-| **`ponytail`** | Extreme YAGNI mode. Forces agents to reach for the standard library before adding dependencies, and native platform APIs before custom code. |
-| **`ponytail-audit`** | Scans an entire codebase for over-engineering, dead weight, and speculative code. |
-| **`ponytail-debt`** | Gathers deliberate shortcuts into a tracked debt ledger so they don't rot. |
-| **`context-budget`** | Audits context window consumption across all skills, rules, and MCP servers. |
-
-### 3. Reasoning, Introspection & Planning
-Before writing any code, I want agents to plan thoroughly, research real docs, and recover cleanly if a command fails.
-
-| Skill | How I Use It |
-| :--- | :--- |
-| **`grill-me`** | An interactive interview agent that interrogates my plan and design decisions one by one until every dependency is resolved. |
-| **`agent-introspection-debugging`** | Structured self-debugging workflow for when an agent fails a task: capture, diagnosis, contained recovery, and post-mortem report. |
-| **`search-first`** | Research-before-coding protocol that forces agents to verify existing libraries and tools before writing custom implementations. |
-| **`find-skills`** | Discovers and installs community agent skills on-the-fly when a new problem domain emerges. |
-| **`documentation-lookup`** | Queries up-to-date documentation on Context7 MCP instead of relying on outdated pre-training knowledge. |
-| **`organize-banners-for-gdn`** | Bulk banner image and sizing pipeline for Google Display Network campaigns. |
+```text
+my-agentic-rig/
+├── skills/                     # Global agent skills
+├── plugins/                    # Installed agent plugin bundles
+├── config/                     # Core runtime and MCP configurations
+│   ├── config.json             # Enabled plugins, theme seeds, execution policy
+│   ├── mcp_config.json         # Active local MCP servers
+│   └── mcp_config.template.json# Portable cross-platform MCP template
+├── setup.ps1                   # Automated setup script for Windows
+├── setup.sh                    # Automated setup script for macOS/Linux/WSL
+├── .gitignore                  # Security guardrails (excludes credentials/tokens)
+└── README.md                   # Documentation
+```
 
 ---
 
-## 🔌 Connected MCP Tools
+## Core Skills Inventory
 
-I connect my agents to external tools via the Model Context Protocol (MCP) so they have live context instead of guessing:
+The rig contains 28 standalone global skills organized by operational focus:
 
-* **`context7`** (`@upstash/context7-mcp`): Instant documentation lookups for modern stacks (React 19, Next.js, Prisma, Tailwind).
-* **`gsap`** (`@vinhnguyen/gsap-mcp`): GSAP animation expertise, ScrollTrigger debugging, and performance profiling.
-* **`shadcn`** (`shadcn@latest mcp`): Component registry exploration and clean UI block scaffolding.
+### 1. Frontend & Visual Systems
+
+| Skill | Description |
+| :--- | :--- |
+| `creative-web-animations` | Theoretical foundations, mathematical mechanics (LERP, spring physics, scroll normalization), and architectural blueprints for 12 modern web paradigms. |
+| `design-taste-frontend` | Curated design direction and anti-slop visual rules distilled from modern gallery sites. |
+| `frontend-design` | Guidelines for intentional visual design, typography, and layout composition. |
+| `improve-animations` | Motion inspection and review workflow focused on timing, physics, and interaction feedback. |
+| `improve-ui` | Targeted UI refinement covering spacing rhythm, sub-pixel borders, hit targets, and micro-interactions. |
+
+### 2. Token Optimization & Compression
+
+| Skill | Description |
+| :--- | :--- |
+| `caveman` | Ultra-dense communication mode reducing token usage by ~75% while maintaining technical accuracy. |
+| `caveman-commit` | Generates concise Conventional Commits with subject lines limited to 50 characters. |
+| `caveman-compress` | Compresses runbooks, notes, and memory files in place to conserve context window space. |
+| `caveman-help` | Quick-reference cheat sheet for all caveman commands and modes. |
+| `caveman-review` | One-line code review comments formatted as location, problem, and fix. |
+| `caveman-stats` | Session token consumption and estimated savings telemetry. |
+| `ponytail` | Strict YAGNI enforcement prioritizing standard libraries and platform primitives over dependencies. |
+| `ponytail-audit` | Codebase scanner for speculative code, unnecessary abstractions, and redundant packages. |
+| `ponytail-debt` | Collects and tracks deliberate shortcuts and deferrals in a structured ledger. |
+| `ponytail-help` | Quick-reference cheat sheet for all ponytail modes and commands. |
+| `ponytail-review` | Code review focused exclusively on hunting over-engineering and dead weight. |
+| `context-budget` | Audits context window utilization across agents, MCP servers, and rule definitions. |
+
+### 3. Planning, Introspection & Reasoning
+
+| Skill | Description |
+| :--- | :--- |
+| `grill-me` | Interactive interview workflow that stress-tests plans and architecture decisions step by step. |
+| `grilling` | Socratic interrogation engine for sharpening technical plans and designs. |
+| `agent-introspection-debugging` | Structured failure handling workflow: capture, contained diagnosis, recovery, and reporting. |
+| `search-first` | Research-before-coding protocol requiring verification of existing tools prior to implementation. |
+| `find-skills` | On-demand discovery and installation tool for community agent skills. |
+| `documentation-lookup` | Direct documentation lookup via Context7 MCP to ensure API accuracy. |
+| `handoff` | Session context transfer and state packaging between agents. |
+| `teach` | Protocol updates and guideline persistence based on developer corrections. |
+| `to-questionnaire` | Converts complex architectural plans into structured multiple-choice interviews. |
+| `wait-what` | Cognitive pause mechanism for sanity-checking assumptions before executing irreversible operations. |
+| `writing-for-agents` | Guidelines for writing clear documentation, rules, and skills specifically tailored for AI agents. |
 
 ---
 
-## 🔒 Security & Portability
+## Skills Provided by Plugins
 
-I maintain an air-gapped security boundary between my personal credentials and this repository:
-- **Never committed**: OAuth tokens, machine hardware identifiers (`installation_id`), local session databases (`projects/`), and command logs.
-- **Portable**: The setup scripts automatically link into your local environment (`~/.gemini/config`, `~/.agents`, or custom agent directories) without hardcoding private file paths.
+In addition to the standalone global skills, the bundled plugins provide extended, specialized capabilities across engineering domains:
+
+### Superpowers (Rigorous Development Workflows)
+* `test-driven-development`: Enforces write-failing-tests-first methodology before writing implementation code.
+* `systematic-debugging`: Multi-phase root-cause diagnosis protocol before attempting fixes.
+* `subagent-driven-development`: Task orchestration across isolated, scoped subagents.
+* `executing-plans`: Step-by-step implementation tracking against approved engineering specs.
+* `writing-plans`: Task breakdown, dependency trees, and implementation checklists.
+* `requesting-code-review` / `receiving-code-review`: Technical review protocols for pull requests and major diffs.
+* `verification-before-completion`: Requires verification command evidence before making success claims.
+* `using-git-worktrees`: Workspace isolation patterns using git worktrees.
+
+### Chrome DevTools (Browser Automation & Runtime Inspection)
+* `chrome-devtools`: Direct browser automation, DOM inspection, network waterfall tracing, and runtime evaluation.
+* `a11y-debugging`: Accessibility auditing based on WCAG 2.2 and web.dev guidelines.
+* `debug-optimize-lcp`: Core Web Vitals and Largest Contentful Paint diagnostics.
+* `cookie-debugging`: Session state, authentication redirects, and cookie consent inspection.
+* `memory-leak-debugging`: Heap snapshot comparisons and memory leak tracking.
+* `troubleshooting`: Target connection and CDP socket debugging.
+
+### GSAP (Motion Systems & Hardware Acceleration)
+* `gsap-core`: Core tweening API, easing equations, durations, and staggers.
+* `gsap-timeline`: Complex multi-step animation sequencing and keyframe choreography.
+* `gsap-scrolltrigger`: Scroll-linked animations, pinning, and scrub ratios.
+* `gsap-react`: React integration patterns using the `useGSAP` hook and context cleanup.
+* `gsap-plugins`: Official plugin registration for Flip, Draggable, and SplitText.
+* `gsap-performance`: Layout thrashing prevention, transforms-only rule, and will-change optimizations.
+
+### Shadcn UI (Accessible Primitives & Components)
+* `shadcn-ui`: Component creation and integration using Radix primitives and Tailwind CSS.
+* `shadcn-component-discovery`: Ecosystem-wide component and registry exploration.
+* `shadcn-component-review`: Visual style audits, token compliance, and slot usage verification.
+
+### Modern Web Guidance
+* `modern-web-guidance`: Search engine and reference tool for modern web standards and browser APIs.
+* `chrome-extensions`: Best practices for Manifest V3 browser extension engineering.
+
+### Pstack & Architectural Reasoning
+* `typescript-best-practices`: Strong type systems, immutability, and safe narrowing.
+* `unslop`: Removal of AI boilerplate, excessive wrappers, and bloated abstractions.
+* `poteto-mode`: Pragmatic, minimalist coding style.
+* `architect`: High-level system design and technical decomposition.
+* `blast-radius`: Change impact analysis before refactoring critical paths.
+
+### ECC & ECC-FullStack (Engineering Standards)
+* `architecture-decision-records`: Automated ADR logging for significant technical decisions.
+* `api-design`: REST API conventions, status codes, pagination, and error contracts.
+* `backend-patterns`: Server-side architecture, data access layers, and API route structure.
+* `database-migrations`: Schema changes, data migrations, rollbacks, and zero-downtime procedures.
+* `e2e-testing`: Playwright end-to-end testing patterns and page object models.
+* `security-review`: Authentication, authorization, input validation, and secret management audits.
+* `deployment-patterns`: CI/CD pipelines, Docker containerization, and production readiness checks.
+
+### Google Antigravity SDK
+* `google-antigravity-sdk`: Autonomous agent design, multi-agent orchestration, and lifecycle tooling.
 
 ---
 
-## 👤 Author
+## Connected MCP Servers
 
-**Ridwanul Azim (Zauwad)**  
-- Portfolio: [ridwanul.dev](https://ridwanul.dev)  
-- GitHub: [@Zauwad](https://github.com/Zauwad)
+External context providers connected via the Model Context Protocol:
 
-Feel free to fork this, strip out what you don't need, and adapt it to your own workflow.
+* `context7` (`@upstash/context7-mcp`): Up-to-date documentation lookup for modern frameworks and libraries.
+* `gsap` (`@vinhnguyen/gsap-mcp`): GSAP animation reference, ScrollTrigger debugging, and timeline optimization.
+* `shadcn` (`shadcn@latest mcp`): Direct registry exploration and block installation for accessible UI components.
+
+---
+
+## Security & Portability
+
+Security boundaries are strictly enforced:
+* Credentials, OAuth tokens (`oauth_creds.json`), machine IDs (`installation_id`), local workspace session files, and logs are excluded via `.gitignore`.
+* The setup scripts link directly to local configuration paths without hardcoding machine-specific absolute directories.
+
+---
+
+## Author
+
+Ridwanul Azim (Zauwad)
+* Portfolio: [ridwanul.dev](https://ridwanul.dev)
+* GitHub: [@Zauwad](https://github.com/Zauwad)
