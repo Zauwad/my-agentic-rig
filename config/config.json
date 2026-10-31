@@ -1,0 +1,77 @@
+{
+  "plugins": {
+    "chrome-devtools-plugin": {
+      "enabled": true,
+      "installedFrom": {
+        "id": "antigravity-plugins-official/plugin/chrome-devtools-plugin",
+        "marketplace": "antigravity-plugins-official",
+        "version": "1.10.1"
+      }
+    },
+    "ecc": {
+      "enabled": true
+    },
+    "google-antigravity-sdk": {
+      "enabled": true,
+      "installedFrom": {
+        "id": "antigravity-plugins-official/plugin/google-antigravity-sdk",
+        "marketplace": "antigravity-plugins-official",
+        "version": "0.0.9"
+      }
+    },
+    "gsap": {
+      "enabled": true
+    },
+    "modern-web-guidance-plugin": {
+      "enabled": true,
+      "installedFrom": {
+        "id": "antigravity-plugins-official/plugin/modern-web-guidance-plugin",
+        "marketplace": "antigravity-plugins-official",
+        "version": "0.0.196"
+      }
+    },
+    "pstack": {
+      "enabled": true
+    },
+    "shadcn-ui": {
+      "enabled": true
+    },
+    "superpowers": {
+      "enabled": true
+    }
+  },
+  "userSettings": {
+    "autoExecutionPolicy": "CASCADE_COMMANDS_AUTO_EXECUTION_EAGER",
+    "customThemeSeedsDark": {
+      "background": "#101010",
+      "foregroundOverride": "#cccccc",
+      "primary": "#007acc"
+    },
+    "customThemeSeedsLight": {
+      "background": "#EEEEEE",
+      "foregroundOverride": "#101010",
+      "primary": "#007acc"
+    },
+    "enableTerminalSandbox": false,
+    "globalPermissionGrants": {
+      "allow": [
+        "command(npm run)",
+        "execute_url(localhost)",
+        "read_url(raw.githubusercontent.com)",
+        "execute_url(nhd-portfolio.vercel.app)",
+        "execute_url(unitedcarriers.com)",
+        "execute_url(aikah.robertoattanasio.com)",
+        "execute_url(ridwanul.dev)",
+        "execute_url(127.0.0.1)"
+      ]
+    },
+    "nonWorkspaceFileAccessPolicy": "AGENT_SETTING_POLICY_ALLOW",
+    "permissionGrantsV2Migrated": true,
+    "permissionPreset": "AGENT_PERMISSION_PRESET_TURBO",
+    "remoteControlEnabled": true,
+    "remoteControlHostname": "zawadsdesktop-dark-halo",
+    "sandboxEnabledAtV2Migration": false,
+    "useAiCredits": false,
+    "artifactReviewMode": "ARTIFACT_REVIEW_MODE_TURBO"
+  }
+}

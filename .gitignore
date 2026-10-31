@@ -1,0 +1,26 @@
+# Sensitive credentials & tokens (NEVER commit)
+*oauth*
+*token*
+*credential*
+*secret*
+*auth*
+google_accounts.json
+installation_id
+state.json
+trustedFolders.json
+
+# Session projects and transient data
+projects/
+*.log
+tmp/
+.temp/
+
+# Node modules & OS metadata
+node_modules/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backups
+*.backup
+*backup*

@@ -1,0 +1,11 @@
+{
+  "herdr": {
+    "PreInvocation": [
+      {
+        "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"C:\\Users\\User\\.gemini\\config\\hooks\\herdr-agent-state.ps1\" session",
+        "timeout": 10,
+        "type": "command"
+      }
+    ]
+  }
+}
