@@ -1,41 +1,26 @@
 {
   "mcpServers": {
     "context7": {
+      "command": "npx",
       "args": [
-        "/c",
-        "npx",
         "-y",
         "@upstash/context7-mcp"
-      ],
-      "command": "cmd.exe",
-      "env": {
-        "PATH": "C:\\Program Files\\PowerShell\\7;C:/Users/User/.gemini/antigravity/bin;C:\\Users\\User\\AppData\\Roaming\\Antigravity\\bin;C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Razer\\ChromaBroadcast\\bin;C:\\Program Files\\Razer\\ChromaBroadcast\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Git\\cmd;C:\\Program Files\\dotnet\\;C:\\Users\\User\\AppData\\Local\\nvm;C:\\nvm4w\\nodejs;C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\;C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\User\\AppData\\Local\\GitHubDesktop\\bin;C:\\MinGW\\bin;C:\\Users\\User\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin;C:\\Users\\User\\AppData\\Local\\PowerToys\\DSCModules\\;C:\\Program Files\\Warp\\bin;F:\\Work Stuff\\Stuff\\puku\\bin;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\Program Files\\Cloudflare\\Cloudflare WARP\\;C:\\Program Files\\PowerShell\\7\\;F:\\Work Stuff\\Stuff\\WezTerm;C:\\Users\\User\\AppData\\Local\\Programs\\Herdr\\bin;C:\\Users\\User\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts;C:\\Users\\User\\AppData\\Local\\hermes\\bin;C:\\Users\\User\\AppData\\Local\\agy\\bin;C:\\Users\\User\\AppData\\Local\\Programs\\oh-my-posh\\bin\\;C:\\Users\\User\\AppData\\Local\\Programs\\Windsurf\\bin;C:\\Users\\User\\AppData\\Local\\Programs\\Antigravity\\bin;C:\\Users\\User\\AppData\\Local\\Programs\\Ollama;C:\\Users\\User\\AppData\\Local\\Microsoft\\WinGet\\Links;F:\\Work Stuff\\Stuff\\bin;F:\\Work Stuff\\Stuff\\Antigravity IDE\\bin;C:\\Users\\User\\AppData\\Local\\Programs\\Antigravity IDE\\bin;C:\\Users\\User\\AppData\\Local\\omp;C:\\Users\\User\\AppData\\Local\\omp;C:\\Users\\User\\AppData\\Local\\agy\\bin"
-      }
+      ]
     },
     "gsap": {
+      "command": "npx",
       "args": [
-        "/c",
-        "npx",
         "-y",
         "@vinhnguyen/gsap-mcp"
-      ],
-      "command": "cmd.exe",
-      "env": {
-        "PATH": "C:\\Program Files\\PowerShell\\7;C:/Users/User/.gemini/antigravity/bin;C:\\Users\\User\\AppData\\Roaming\\Antigravity\\bin;C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Razer\\ChromaBroadcast\\bin;C:\\Program Files\\Razer\\ChromaBroadcast\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Git\\cmd;C:\\Program Files\\dotnet\\;C:\\Users\\User\\AppData\\Local\\nvm;C:\\nvm4w\\nodejs;C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\;C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\User\\AppData\\Local\\GitHubDesktop\\bin;C:\\MinGW\\bin;C:\\Users\\User\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin;C:\\Users\\User\\AppData\\Local\\PowerToys\\DSCModules\\;C:\\Program Files\\Warp\\bin;F:\\Work Stuff\\Stuff\\puku\\bin;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\Program Files\\Cloudflare\\Cloudflare WARP\\;C:\\Program Files\\PowerShell\\7\\;F:\\Work Stuff\\Stuff\\WezTerm;C:\\Users\\User\\AppData\\Local\\Programs\\Herdr\\bin;C:\\Users\\User\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts;C:\\Users\\User\\AppData\\Local\\hermes\\bin;C:\\Users\\User\\AppData\\Local\\agy\\bin;C:\\Users\\User\\AppData\\Local\\Programs\\oh-my-posh\\bin\\;C:\\Users\\User\\AppData\\Local\\Programs\\Windsurf\\bin;C:\\Users\\User\\AppData\\Local\\Programs\\Antigravity\\bin;C:\\Users\\User\\AppData\\Local\\Programs\\Ollama;C:\\Users\\User\\AppData\\Local\\Microsoft\\WinGet\\Links;F:\\Work Stuff\\Stuff\\bin;F:\\Work Stuff\\Stuff\\Antigravity IDE\\bin;C:\\Users\\User\\AppData\\Local\\Programs\\Antigravity IDE\\bin;C:\\Users\\User\\AppData\\Local\\omp;C:\\Users\\User\\AppData\\Local\\omp;C:\\Users\\User\\AppData\\Local\\agy\\bin"
-      }
+      ]
     },
     "shadcn": {
+      "command": "npx",
       "args": [
-        "/c",
-        "npx",
         "-y",
         "shadcn@latest",
         "mcp"
-      ],
-      "command": "cmd.exe",
-      "env": {
-        "PATH": "C:\\Program Files\\PowerShell\\7;C:/Users/User/.gemini/antigravity/bin;C:\\Users\\User\\AppData\\Roaming\\Antigravity\\bin;C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Razer\\ChromaBroadcast\\bin;C:\\Program Files\\Razer\\ChromaBroadcast\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Git\\cmd;C:\\Program Files\\dotnet\\;C:\\Users\\User\\AppData\\Local\\nvm;C:\\nvm4w\\nodejs;C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\;C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\;C:\\Users\\User\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\User\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\User\\AppData\\Local\\GitHubDesktop\\bin;C:\\MinGW\\bin;C:\\Users\\User\\AppData\\Local\\Programs\\cursor\\resources\\app\\bin;C:\\Users\\User\\AppData\\Local\\PowerToys\\DSCModules\\;C:\\Program Files\\Warp\\bin;F:\\Work Stuff\\Stuff\\puku\\bin;C:\\Program Files\\Docker\\Docker\\resources\\bin;C:\\Program Files\\Cloudflare\\Cloudflare WARP\\;C:\\Program Files\\PowerShell\\7\\;F:\\Work Stuff\\Stuff\\WezTerm;C:\\Users\\User\\AppData\\Local\\Programs\\Herdr\\bin;C:\\Users\\User\\AppData\\Local\\hermes\\hermes-agent\\venv\\Scripts;C:\\Users\\User\\AppData\\Local\\hermes\\bin;C:\\Users\\User\\AppData\\Local\\agy\\bin;C:\\Users\\User\\AppData\\Local\\Programs\\oh-my-posh\\bin\\;C:\\Users\\User\\AppData\\Local\\Programs\\Windsurf\\bin;C:\\Users\\User\\AppData\\Local\\Programs\\Antigravity\\bin;C:\\Users\\User\\AppData\\Local\\Programs\\Ollama;C:\\Users\\User\\AppData\\Local\\Microsoft\\WinGet\\Links;F:\\Work Stuff\\Stuff\\bin;F:\\Work Stuff\\Stuff\\Antigravity IDE\\bin;C:\\Users\\User\\AppData\\Local\\Programs\\Antigravity IDE\\bin;C:\\Users\\User\\AppData\\Local\\omp;C:\\Users\\User\\AppData\\Local\\omp;C:\\Users\\User\\AppData\\Local\\agy\\bin"
-      }
+      ]
     }
   }
 }
