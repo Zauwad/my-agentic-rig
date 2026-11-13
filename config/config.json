@@ -38,6 +38,9 @@
     },
     "superpowers": {
       "enabled": true
+    },
+    "workflow-changelog": {
+      "enabled": true
     }
   },
   "userSettings": {

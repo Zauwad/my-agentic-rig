@@ -40,7 +40,7 @@ foreach ($dir in $dirs) {
 $scriptRoot = $PSScriptRoot
 
 # 1. Sync Skills
-Write-Host "`n[1/3] Installing Skills..." -ForegroundColor Yellow
+Write-Host "`n[1/4] Installing Skills..." -ForegroundColor Yellow
 $skillsSource = Join-Path $scriptRoot "skills"
 if (Test-Path $skillsSource) {
     $skills = Get-ChildItem -Path $skillsSource -Directory
@@ -52,7 +52,7 @@ if (Test-Path $skillsSource) {
 }
 
 # 2. Sync Plugins
-Write-Host "`n[2/3] Installing Plugins..." -ForegroundColor Yellow
+Write-Host "`n[2/4] Installing Plugins..." -ForegroundColor Yellow
 $pluginsSource = Join-Path $scriptRoot "plugins"
 if (Test-Path $pluginsSource) {
     $plugins = Get-ChildItem -Path $pluginsSource -Directory
@@ -64,7 +64,7 @@ if (Test-Path $pluginsSource) {
 }
 
 # 3. Sync Settings & MCP Configuration
-Write-Host "`n[3/3] Syncing Settings & MCP Servers..." -ForegroundColor Yellow
+Write-Host "`n[3/4] Syncing Settings & MCP Servers..." -ForegroundColor Yellow
 $configSrc = Join-Path $scriptRoot "config\config.json"
 $configDest = Join-Path $ConfigDir "config.json"
 if (Test-Path $configSrc) {
@@ -85,6 +85,31 @@ $mcpDest = Join-Path $ConfigDir "mcp_config.json"
 if (Test-Path $mcpSrc) {
     Copy-Item -Path $mcpSrc -Destination $mcpDest -Force
     Write-Host "  -> MCP servers active (context7, gsap, shadcn)" -ForegroundColor Green
+}
+
+$geminiRuleSrc = Join-Path $scriptRoot "config\GEMINI.md"
+if (Test-Path $geminiRuleSrc) {
+    $geminiDest = Join-Path $HOME ".gemini\GEMINI.md"
+    $agentsDest = Join-Path $ConfigDir "AGENTS.md"
+    Copy-Item -Path $geminiRuleSrc -Destination $geminiDest -Force
+    Copy-Item -Path $geminiRuleSrc -Destination $agentsDest -Force
+    Write-Host "  -> Global agent rules synced" -ForegroundColor Green
+}
+
+# 4. Sync Cursor Rules
+Write-Host "`n[4/4] Syncing Cursor Rules..." -ForegroundColor Yellow
+$cursorRulesDest = Join-Path $HOME ".cursor\rules"
+if (-not (Test-Path $cursorRulesDest)) {
+    New-Item -ItemType Directory -Path $cursorRulesDest -Force | Out-Null
+}
+$cursorRulesSource = Join-Path $scriptRoot "cursor\rules"
+if (Test-Path $cursorRulesSource) {
+    $cursorRules = Get-ChildItem -Path $cursorRulesSource
+    foreach ($rule in $cursorRules) {
+        $dest = Join-Path $cursorRulesDest $rule.Name
+        Write-Host "  -> Syncing Cursor rule: $($rule.Name)" -ForegroundColor Green
+        Copy-Item -Path $rule.FullName -Destination $dest -Force
+    }
 }
 
 Write-Host "`nRig ready. Your agent runtime is loaded and synchronized.`n" -ForegroundColor Cyan

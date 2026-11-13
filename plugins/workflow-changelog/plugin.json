@@ -1,0 +1,4 @@
+{
+  "name": "workflow-changelog",
+  "description": "Global workflow rule for maintaining .agents/workflow/CHANGELOG.md on code, config, or rules changes"
+}

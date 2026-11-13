@@ -184,6 +184,12 @@ In addition to the standalone global skills, the bundled plugins provide extende
 * `security-review`: Authentication, authorization, input validation, and secret management audits.
 * `deployment-patterns`: CI/CD pipelines, Docker containerization, and production readiness checks.
 
+### Workflow & Changelog Tracking (Cursor & Antigravity)
+* `workflow-changelog`: Automatic, turn-by-turn changelog tracking under `[Unreleased]` whenever code, configuration, or rules change.
+  * **Dual-Runtime Compatibility**: When running in Antigravity, writes to `.agents/workflow/CHANGELOG.md` with `Author: Antigravity agent`. When running in Cursor, writes to `.cursor/workflow/CHANGELOG.md` with `Author: Cursor agent`.
+  * **Multi-Project & Monorepo Support**: When modifying files in a subproject with its own git root inside an opened workspace, updates both the subproject and top-level workspace changelogs using workspace-relative file paths.
+  * **Agnostic & Portable**: Clean markdown format with timestamps, summary bullets, affected files, and impact categories—completely portable across machines.
+
 ### Google Antigravity SDK
 * `google-antigravity-sdk`: Autonomous agent design, multi-agent orchestration, and lifecycle tooling.
 
