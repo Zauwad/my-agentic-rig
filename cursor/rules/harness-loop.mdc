@@ -1,0 +1,65 @@
+---
+description: Plan first, one subsection, harness + loop engineering — required on every coding and fix task
+alwaysApply: true
+---
+
+# Plan → Subsection → Execute-One (Harness + Loop Engineering)
+
+## Scope
+Applies to **every coding, feature, refactoring, or bugfix task** across all projects and tech stacks. Skip only for strictly read-only exploration or trivial single-file Q&A with no code changes.
+
+## 1. Plan First (Mandatory)
+Before writing or editing code:
+1. **Restate the goal** in one concise sentence.
+2. **Break work into numbered subsections** (each one independently shippable + testable).
+3. **Detail each subsection**: note files touched, acceptance check / pass criteria, and risk.
+4. **Maintain an active todo/task list**: mark only **one** subsection as `in_progress` at a time.
+5. **Align with the project's active plan/spec**: follow existing plans, specifications, or issue roadmaps; do not invent a detached parallel roadmap.
+
+Do **not** start implementing subsection $N+1$ until subsection $N$ is completely implemented and verified.
+
+## 2. Execute Only One Subsection at a Time
+- Implement **exactly one** subsection per pass.
+- Finish → verify against its harness gate → mark complete → only then proceed to the next.
+- Never batch unrelated subsections in a single coding sweep.
+- If blocked, halt that subsection, document the blocker, and do not silently skip ahead.
+
+## 3. Harness Engineering (Gates Defined Before Coding)
+Each subsection must have a concrete **harness** (pass/fail verification gate) established **before touching code**:
+
+| Gate | Requirement |
+|---|---|
+| **Build / Lint / Typecheck** | Project-specific verification clean for touched files (e.g., linter, compiler, typechecker, or syntax check) |
+| **Behavior / Contract** | Acceptance criteria and behavioral requirements verified via automated tests or targeted validation scripts |
+| **Runtime & Interface** | Functional validation under real execution (see Section 5 below) |
+| **Rollback Plan** | Clear knowledge of changes to revert if the gate fails |
+
+A subsection without a verified pass/fail gate is incomplete.
+
+## 4. Loop Engineering
+Until the harness passes:
+1. **Run the check**: execute the gate check (lint, typecheck, unit/integration test, or runtime/browser inspection).
+2. **Diagnose & iterate**: if failed → analyze root cause → apply minimal fix → re-run (**same subsection only**).
+3. **Escalate when stuck**: after 2–3 failed loops, halt blind retries and escalate (switch to a deeper model, rethink approach, or consult the user).
+4. **No infinite loops**: keep verification tight and deterministic; use interval/timer polling only when explicitly requested.
+
+## 5. Runtime & Interface Verification
+Verify actual runtime execution according to the project's interface:
+- **UI / Frontend / Web:**
+  1. **Primary Browser Verification (Playwright First):** Use Playwright automated tests or scripts as the first-choice testing harness to execute navigation, user interactions, and assertions against DOM state, console logs, and network activity.
+  2. **Interactive Fallback (Chrome DevTools):** If Playwright is not configured or live exploratory testing is required, fall back to Chrome DevTools MCP (or browser subagent) to navigate, click, type, and verify the path interactively.
+  3. **Visual Success Screenshots (Mandatory):** Capture and provide clear screenshot(s) of the successful changes and success screens as concrete visual proof of completion.
+  4. **Health Check:** Ensure console logs and network activity show zero unhandled runtime errors, warnings, or failed network requests.
+- **Backend / API / CLI / Services:**
+  1. Execute the endpoint, command, or script with test payloads.
+  2. Inspect output, status codes, and server/application logs.
+  3. Ensure clean error handling and no silent failures.
+
+## Execution Checklist
+- [ ] Plan + numbered subsections established
+- [ ] Exactly one subsection marked in progress
+- [ ] Harness gates defined before writing code
+- [ ] Loop until pass (or escalate after 2–3 failed cycles)
+- [ ] Runtime / interface verified (Playwright first, Chrome DevTools fallback)
+- [ ] Visual screenshots of success screens captured and provided
+

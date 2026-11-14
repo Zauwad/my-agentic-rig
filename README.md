@@ -82,7 +82,7 @@ my-agentic-rig/
 
 ## Core Skills Inventory
 
-The rig contains 28 standalone global skills organized by operational focus:
+The rig contains 29 standalone global skills organized by operational focus:
 
 ### 1. Frontend & Visual Systems
 
@@ -117,6 +117,7 @@ The rig contains 28 standalone global skills organized by operational focus:
 | :--- | :--- |
 | `grill-me` | Interactive interview workflow that stress-tests plans and architecture decisions step by step. |
 | `grilling` | Socratic interrogation engine for sharpening technical plans and designs. |
+| `harness-loop` | Plan first, execute one numbered subsection at a time, and apply harness and loop engineering (gate before code, loop until pass) on coding and feature tasks across any project. |
 | `agent-introspection-debugging` | Structured failure handling workflow: capture, contained diagnosis, recovery, and reporting. |
 | `search-first` | Research-before-coding protocol requiring verification of existing tools prior to implementation. |
 | `find-skills` | On-demand discovery and installation tool for community agent skills. |
